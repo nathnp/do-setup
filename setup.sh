@@ -4,6 +4,8 @@ apt update
 
 apt install fish tmux duf ncdu curl wget rsync -y
 
+chsh -s $(which fish)
+
 curl -sSL https://repos.insights.digitalocean.com/install.sh | sudo bash
 
 curl -fsSL https://tailscale.com/install.sh | sh
