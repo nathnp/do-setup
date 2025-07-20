@@ -2,7 +2,11 @@
 
 apt update
 
-apt upgrade -y
+export DEBIAN_FRONTEND=noninteractive
+apt-get -o Dpkg::Options::="--force-confdef" \
+        -o Dpkg::Options::="--force-confold" \
+        full-upgrade -y
+unset DEBIAN_FRONTEND
 
 apt install fish tmux btop duf ncdu curl wget rsync -y
 
